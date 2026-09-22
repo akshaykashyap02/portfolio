@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshay Kashyap · Full Stack & AIML Engineer</title>
+  <meta name="description" content="Portfolio of Akshay Kashyap — Full Stack & AIML Engineer building scalable web apps and intelligent systems.">
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating background orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div class="container">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+      <div class="name-block">
+        <div class="profile-photo-wrapper">
+          <img src="assets/profile.jpg" alt="Akshay Kashyap" class="profile-photo">
+          <span class="status-dot" title="Available for work"></span>
+        </div>
+
+        <div class="name-title">
+          <h1>Akshay Kashyap</h1>
+          <div class="tagline">
+            <span class="tag-chip">
+              <i class="fas fa-layer-group"></i> Full Stack Developer
+            </span>
+            <span class="tag-chip tag-chip-alt">
+              <i class="fas fa-brain"></i> AIML Engineer
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Contact
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/akshaykashyap02" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/akshay-kashyap-39792737b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          
+          <a href="mailto:akshaykashyap8929@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about">
+      <div class="section-title">
+        <span class="title-icon"><i class="fas fa-user-astronaut"></i></span>
+        <span>About &amp; Resume</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a <span class="highlight">Full Stack &amp; AIML Engineer</span> passionate about
+            building end-to-end web applications and intelligent systems.
+          </p>
+          <p>
+            I work across the <span class="highlight">MERN stack</span>
+            and <span class="highlight">Machine Learning</span> — from data pipelines to deployed models.
+          </p>
+          <div class="skills-groups">
+  <div class="skills-group">
+    <span class="skills-label">Web</span>
+    <div class="skills-pill">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      <span>TypeScript</span><span>React</span><span>Tailwind CSS</span>
+      <span>Node.js</span><span>Express.js</span><span>REST APIs</span>
+      <span>MongoDB</span><span>MySQL</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <span class="skills-label">AI / ML</span>
+    <div class="skills-pill">
+      <span>Python</span><span>NumPy</span><span>Pandas</span>
+      <span>scikit-learn</span><span>TensorFlow</span><span>PyTorch</span>
+      <span>Hugging Face</span><span>LLMs</span><span>RAG</span>
+      <span>LangChain</span><span>FastAPI</span>
+    </div>
+  </div>
+
+  <div class="skills-group">
+    <span class="skills-label">Tools</span>
+    <div class="skills-pill">
+      <span>Git</span><span>GitHub</span><span>Docker</span><span>AWS</span>
+    </div>
+  </div>
+</div>
+        </div>
+
+        <div class="resume-quick">
+          <h3><i class="fas fa-file-alt"></i> Quick CV</h3>
+          <ul>
+            <li><i class="fas fa-briefcase"></i> Full Stack + AIML projects</li>
+            <li><i class="fas fa-graduation-cap"></i> B.Tech Computer Science</li>
+            <li><i class="fas fa-certificate"></i> MERN &amp; ML Certified</li>
+          </ul>
+          <a href="assets/akshay_kashyap_CV.pdf" class="download-cv" download>
+            Download CV <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects">
+      <div class="section-title">
+        <span class="title-icon"><i class="fas fa-laptop-code"></i></span>
+        <span>Projects</span>
+      </div>
+      <p class="section-hint">
+        <i class="fas fa-hand-pointer"></i> Click any project card to open it live
+      </p>
+      <div class="projects-grid" id="projectsGrid">
+        <p class="loading-text">Loading projects…</p>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact">
+      <div class="section-title">
+        <span class="title-icon"><i class="fas fa-envelope"></i></span>
+        <span>Contact Me</span>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <input type="text"  name="name"    placeholder="Your name"    required autocomplete="name">
+        <input type="email" name="email"   placeholder="Your email"   required autocomplete="email">
+        <textarea           name="message" rows="4" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn btn-primary">
+          Send Message <i class="fas fa-arrow-right"></i>
+        </button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-note">
+      <div class="languages">
+        <span><i class="fas fa-language"></i> English</span>
+        <span><i class="fas fa-language"></i> Hindi</span>
+      </div>
+      <div>© 2025 Akshay Kashyap · Full Stack &amp; AIML Engineer</div>
+    </footer>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
