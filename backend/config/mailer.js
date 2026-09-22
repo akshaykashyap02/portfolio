@@ -1,24 +1,40 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  requireTLS: true,
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+const transporter = {
+  async sendMail({ from, to, replyTo, subject, html }) {
+    const { data, error } = await resend.emails.send({
+      from,
+      to: Array.isArray(to) ? to : [to],
+      replyTo,
+      subject,
+      html,
+    });
+
+    if (error) {
+      throw new Error(error.message || "Resend email failed");
+    }
+
+    return data;
   },
-});
 
-// Verify connection when server starts
-transporter.verify((err) => {
-  if (err) {
-    console.error("❌ Email transporter error:", err.message);
-  } else {
-    console.log("📧 Email transporter ready");
-  }
-});
+  async verify() {
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY is not configured");
+    }
+
+    return true;
+  },
+};
+
+transporter
+  .verify()
+  .then(() => {
+    console.log("📧 Resend email client ready");
+  })
+  .catch((err) => {
+    console.error("❌ Resend configuration error:", err.message);
+  });
 
 module.exports = transporter;
