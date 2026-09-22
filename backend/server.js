@@ -1,4 +1,4 @@
-// ---------- Load env FIRST (before anything that reads process.env) ----------
+// ---------- Load env FIRST ----------
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -6,7 +6,7 @@ dotenv.config();
 const express = require("express");
 const cors = require("cors");
 
-// ---------- Local modules (these read process.env, so must load AFTER dotenv.config) ----------
+// ---------- Local modules ----------
 const connectDB = require("./config/db");
 const projectRoutes = require("./routes/projects");
 const contactRoutes = require("./routes/contact");
@@ -21,9 +21,10 @@ const app = express();
 // ---------- Middleware ----------
 app.use(
   cors({
-    origin: "*", // in production, replace with your frontend URL
+    origin: "*",
   })
 );
+
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: false }));
 
@@ -45,14 +46,18 @@ app.use("/api/contact", contactRoutes);
 
 // ---------- 404 handler ----------
 app.use((req, res) => {
-  res.status(404).json({ success: false, error: "Route not found" });
+  res.status(404).json({
+    success: false,
+    error: "Route not found",
+  });
 });
 
-// ---------- Global error handler (must be last) ----------
+// ---------- Global error handler ----------
 app.use(errorHandler);
 
 // ---------- Start server ----------
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
