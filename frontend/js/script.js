@@ -3,7 +3,7 @@
    ===================================================== */
 
 // 🔗 Change to deployed URL later (e.g., https://akshay-portfolio-api.onrender.com/api)
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://portfolio-backend-4i5h.onrender.com/api";
 
 /* ---------- ESCAPE HTML (prevents XSS if DB data has stray tags) ---------- */
 function escapeHtml(str) {
