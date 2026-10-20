@@ -16,6 +16,16 @@ const sampleProjects = [
   codeUrl: "",                             // put GitHub URL here if public, else leave ""
   order: 1,
 },
+  {
+    title: "Real-Time Chat App",
+    description: "A full-stack MERN real-time chat application with instant messaging, user authentication, and online status.",
+    icon: "fas fa-comments",
+    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
+    liveUrl: "https://chat-appak.vercel.app",
+    codeUrl: "https://github.com/akshaykashyap", // Replace with actual repo link
+    featured: true,
+    order: 1,
+  },
 
 ];
 
